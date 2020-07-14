@@ -2,8 +2,7 @@ import React, {useEffect,useState} from 'react';
 import getGifs from '../services/getGifs';
 import Gif from './Gif';
 
-function ListOfGifs({ params }) {
-	const { keyword } = params;
+function ListOfGifs({keyword}) {
 	const [gifs, setGifs] = useState([]);
 	const [loading, setLoading] = useState(false);
 

@@ -1,0 +1,10 @@
+.home ul{
+	list-style: none;
+	text-align: left;
+	padding: 0;
+}
+
+.home a{
+	color: #fff;
+	text-decoration: none;
+}

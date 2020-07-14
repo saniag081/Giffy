@@ -1,5 +1,6 @@
 import React from 'react';
-import ListOfGifs from './components/listOfGifs';
+import SearchResults from './Pages/SearchResults/SearchResults';
+import Home from './Pages/Home/index';
 import { Link, Route } from 'wouter';
 import './App.css';
 
@@ -8,13 +9,13 @@ function App() {
   return (
     <div className="App">
       <section className="App-content">
-        <h1>App</h1>
-        <Link to="/gif/:colombia">Gif Colombia</Link>
-        <Link to="/gif/:Rick">Gif Rick</Link>
-        <Link to="/gif/:Morty">Gif Morty</Link>
+      <Route
+          path="/"
+          component={Home}
+        />
         <Route
-          path="/gif/:keyword"
-          component={ListOfGifs}
+          path="/search/:keyword"
+          component={SearchResults}
         />
       </section>
     </div>
