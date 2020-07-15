@@ -1,4 +1,5 @@
 import React, {useEffect,useState} from 'react';
+import './styles/ListIfGifs.css'
 import getGifs from '../services/getGifs';
 import Gif from './Gif';
 
@@ -16,7 +17,7 @@ function ListOfGifs({keyword}) {
 
 	if(loading) return <h4>Cargando...</h4>
 	return (
-		<div>
+		<div className="c-grid-box">
 			{
 				gifs.map(({id, title, url}) =>
 				<Gif
