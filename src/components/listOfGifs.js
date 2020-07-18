@@ -1,19 +1,10 @@
-import React, {useEffect,useState} from 'react';
+import React from 'react';
 import './styles/ListIfGifs.css'
-import getGifs from '../services/getGifs';
+import useGifs from '../hooks/UseGifs';
 import Gif from './Gif';
 
 function ListOfGifs({keyword}) {
-	const [gifs, setGifs] = useState([]);
-	const [loading, setLoading] = useState(false);
-
-	useEffect(function () {
-		setLoading(true)
-		getGifs({ keyword }).then(gifs => {
-			setGifs(gifs);
-			setLoading(false);
-		})
-	}, [keyword]);
+	const {loading, gifs} = useGifs({ keyword })
 
 	if(loading) return <h4>Cargando...</h4>
 	return (
