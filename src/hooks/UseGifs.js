@@ -7,9 +7,13 @@ function UseGifs({ keyword }) {
 
 	useEffect(function () {
 		setLoading(true)
-		getGifs({ keyword }).then(gifs => {
+		// revcuperar la keywor del local storage
+		const keyworToUse = keyword || localStorage.getItem('lastKeyword')
+		getGifs({ keyword : keyworToUse}).then(gifs => {
 			setGifs(gifs);
 			setLoading(false);
+			//guardamos la keyword en el local storage
+			localStorage.setItem('lastKeyword', keyword)
 		})
 	}, [keyword]);
 	return {loading, gifs}

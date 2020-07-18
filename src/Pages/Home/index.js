@@ -26,7 +26,7 @@ function Home() {
 					<input type="text" value={keyword} onChange={handleChange} placeholder="Search a gif here.."/>
 				</form>
 				<h2> Ultima busqueda</h2>
-				<ListOfGifs keyword="avengers"/>
+				<ListOfGifs/>
 				<h2>Los gifs mas populares</h2>
 				<ul>
 					{POPULAR_GIFS.map((popularGifs) => (
